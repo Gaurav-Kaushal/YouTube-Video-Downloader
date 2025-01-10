@@ -1,85 +1,92 @@
 # YouTube Video Downloader
 
-The objective of this project is to download any type of video in a fast and easy way from youtube in your device.
+The **YouTube Video Downloader** is a Python-based GUI application designed for downloading YouTube videos easily and quickly. With just a YouTube URL, users can download videos in a straightforward and user-friendly interface.
 
-In this, user has to copy the youtube video URL that they want to download and simply paste that URL in the ‘paste link here’ section and click on the download button, it will start downloading the video. When video downloading finishes, it shows a message ‘downloaded’ popup on the window below the download button.
+---
 
-</br>
+## Features
+- Simple GUI built with Tkinter.
+- Supports downloading videos in MP4 format using `yt-dlp`.
+- Displays clear success or error messages for the user.
+- Allows users to specify a download location.
+
+---
 
 ## Prerequisites
+Ensure you have the following installed:
+- **Python 3.8 or higher**
 
-To implement this, we use basic concept of python, tkinter and pytube library.
-
-- **Tkinter** is a standard GUI library and it is one of the easiest ways to build a GUI application.
-- **pytube** used for downloading videos from youtube
-
-</br>
-
-To install the required modules run pip installer command on the command line:
-
+Install the required dependencies with:
+```bash
+pip install -r requirements.txt
 ```
-pip install tkinter
-pip install pytube
+## Installation
+
+Clone this repository:
+   ```bash
+   git clone https://github.com/your-username/YouTube-Video-Downloader.git
+   cd YouTube-Video-Downloader
+   ```
+
+
+## Running the Application
+Run the application with:
+
+```bash
+python app.py
+```
+This will open a GUI window where you can paste the YouTube video URL and start downloading.
+
+## Running with Docker
+Alternatively, you can use Docker to run the application:
+
+1. Build the Docker image:
+```bash
+docker build -t youtube-downloader .
+```
+2. Run the Docker container:
+```bash
+docker run -it youtube-downloader
 ```
 
-</br>
+## Project Structure
+```bash
+.
+├── YT_Video_Downloader.py.py                # Main Python script to run the application
+├── requirements.txt                         # Dependencies required for the project
+├── Dockerfile                               # Dockerfile for containerizing the application
+├── README.md                                # Documentation file
+```
 
-These are the following steps to build:
+## Screenshots
+Adding screenshots of the GUI here to demonstrate the application's functionality. 
 
-</br>
 
-### Step 1: Import libraries
+## Technologies Used
++ Python 3: Programming language for the application.
++ Tkinter: Standard GUI library for creating the application interface.
++ yt-dlp: Advanced library for downloading YouTube videos.
 
-Start the project by importing the required modules.
+## Contributing
+Contributions are welcome! If you'd like to improve this project:
 
-In this script implementation, we import Tkinter and pytube modules.
+1. Fork the repository.
+2. Create a new branch:
+```bash
+git checkout -b 'feature-name'
+```
+3. Commit your changes:
+```bash
+git commit -m 'Add some feature'
+```
+4. Push to the branch:
+```bash
+git push origin 'feature-name'
+```
+5. Open a pull request.
 
-</br>
+## License
+This project is licensed under the MIT License. See the LICENSE file for details.
 
-### Step 2: Create display window
-
-- **Tk()** used to initialize tkinter to create display window
-- **geometry()** used to set the window’s width and height
-- **resizable(0,0)** set the fix size of window
-- **title()** used to give the title of window
-- **Label()** widget use to display text that users can’t able to modify.
-- **root** is the name of the window
-- **text** which we display the title of the label
-- **font** in which our text is written
-- **pack** organized widget in block
-
-</br>
-
-### Step 3: Create field to enter link
-
-- **link** is a string type variable that stores the youtube video link that the user enters.
-- **Entry()** widget is used when we want to create an input text field.
-- **width** sets the width of entry widget
-- **textvariable** used to retrieve the value of current text variable to the entry widget
-- **place()** use to place the widget at a specific position
-
-</br>
-
-### Step 4: Create function to start downloading
-
-`url` variable gets the youtube link from the link variable by **get()** function and then **str()** will convert the link in string datatype.
-
-The video is downloaded in the first present stream of that video by **stream.first()** method.
-
-**Button()** widget used to display button on the window.
-
-- **text** which we display on the label
-- **font** in which the text is written
-- **bg** sets the background color
-- **command** is used to call the function
-
-**root.mainloop()** is a method that executes when we want to run the program.
-
-</br>
-
-### Output
-
-After running this script, you will be able to see this:
-
-</br>
-
+## Support
+If you encounter any issues or have questions, please open an issue on GitHub or contact me directly.
