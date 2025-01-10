@@ -59,8 +59,18 @@ docker run -it youtube-downloader
 ```
 
 ## Screenshots
-Adding screenshots of the GUI here to demonstrate the application's functionality. 
+Adding screenshots of the GUI here to demonstrate the application's functionality.
+1. How Load Screen will Look Like
+![ScreenShot](/screenshots/Initial.png)
 
+2. Where to paste the link
+![ScreenShot](/screenshots/Paste-link.png)
+
+3. Select The Folder Where you want to Download the Video
+![ScreenShot](/screenshots/Select-Folder.png)
+
+4. Final Output Showing Video is Downloaded
+![ScreenShot](/screenshots/Final.png)
 
 ## Technologies Used
 + Python 3: Programming language for the application.
