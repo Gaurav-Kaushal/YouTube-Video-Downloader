@@ -1,6 +1,18 @@
 from tkinter import *
 from tkinter import filedialog
 import subprocess
+import os
+import shutil
+
+def check_ffmpeg():
+    if shutil.which("ffmpeg") is None:
+        print("WARNING: ffmpeg not found. The downloaded format may not be the best available.")
+        print("Install ffmpeg for better video/audio processing: https://github.com/yt-dlp/yt-dlp#dependencies")
+    else:
+        print("ffmpeg is installed and ready to use.")
+
+check_ffmpeg()
+
 
 root = Tk()
 root.geometry('800x400')  
