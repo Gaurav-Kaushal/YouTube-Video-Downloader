@@ -61,16 +61,16 @@ docker run -it youtube-downloader
 ## Screenshots
 Adding screenshots of the GUI here to demonstrate the application's functionality.
 1. How Load Screen will Look Like
-![ScreenShot](/screenshots/Initial.png)
+![ScreenShot](https://github.com/Gaurav-Kaushal/YouTube-Video-Downloader/blob/main/Screenshots/Initial%20Box.png)
 
 2. Where to paste the link
-![ScreenShot](/screenshots/Paste-link.png)
+![ScreenShot](https://github.com/Gaurav-Kaushal/YouTube-Video-Downloader/blob/main/Screenshots/Paste-link.png)
 
 3. Select The Folder Where you want to Download the Video
-![ScreenShot](/screenshots/Select-Folder.png)
+![ScreenShot](https://github.com/Gaurav-Kaushal/YouTube-Video-Downloader/blob/main/Screenshots/Select-Folder.png)
 
 4. Final Output Showing Video is Downloaded
-![ScreenShot](/screenshots/Final.png)
+![ScreenShot](https://github.com/Gaurav-Kaushal/YouTube-Video-Downloader/blob/main/Screenshots/Final.png)
 
 ## Technologies Used
 + Python 3: Programming language for the application.
