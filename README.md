@@ -15,6 +15,7 @@ The **YouTube Video Downloader** is a Python-based GUI application designed for 
 ## Prerequisites
 Ensure you have the following installed:
 - **Python 3.8 or higher**
+- **ffmpeg**: Strongly recommended for better video/audio processing. Install it by following the [ffmpeg installation guide](https://github.com/yt-dlp/yt-dlp#dependencies).
 
 Install the required dependencies with:
 ```bash
