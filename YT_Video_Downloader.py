@@ -1,32 +1,47 @@
 from tkinter import *
-from pytube import YouTube
+from tkinter import filedialog
+import subprocess
 
 root = Tk()
-root.geometry('700x300')
+root.geometry('800x400')  
 root.resizable(0, 0)
 root.title("YouTube Video Downloader")
 
 Label(root, text='Copy the link of the video you want to download from YouTube',
-      font='arial 15 bold').pack()
+      font='arial 17 bold', bg='lightblue', fg='darkblue').pack(fill='x', pady=10)
 
-# enter link
 link = StringVar()
 
-Label(root, text='Paste Link Here:', font='arial 15 bold').place(x=270, y=60)
-Entry(root, width=80, textvariable=link).place(x=32, y=90)
-
-# function to download video
-
+Label(root, text='Paste Link Below & Hit Download Button:', font='arial 15 bold').pack(pady=20)
+Entry(root, width=50, textvariable=link).pack(pady=10)
 
 def Downloader():
+    try:
+        video_url = str(link.get())  
+        if not video_url.strip():
+            Label(root, text='ERROR: Please enter a valid URL', font='arial 15', fg='red').pack(pady=10)
+            return
+        
+        download_path = filedialog.askdirectory()  
+        if not download_path:
+            Label(root, text='Download Cancelled', font='arial 15', fg='orange').pack(pady=10)
+            return
 
-    url = YouTube(str(link.get()))
-    video = url.streams.first()
-    video.download()
-    Label(root, text='DOWNLOADED', font='arial 15').place(x=270, y=210)
+        subprocess.run([
+            'yt-dlp',
+            '-o', f'{download_path}/%(title)s.%(ext)s',  
+            video_url
+        ], check=True)
+
+        Label(root, text='DOWNLOADED', font='arial 15 bold', bg='lightgreen', fg='darkgreen').pack(pady=10)
+
+    except subprocess.CalledProcessError as e:
+        Label(root, text=f'ERROR: Download failed ({e})', font='arial 15', fg='red').pack(pady=10)
+    except Exception as e:
+        Label(root, text=f'ERROR: {e}', font='arial 15', fg='red').pack(pady=10)
 
 
-Button(root, text='DOWNLOAD', font='arial 15 bold', bg='white',
-       padx=2, command=Downloader).place(x=280, y=150)
+Button(root, text='DOWNLOAD', font='arial 15 bold', bg='orange', fg='white',
+       padx=20, pady=5, command=Downloader).pack(pady=20)
 
 root.mainloop()
